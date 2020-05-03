@@ -289,3 +289,4 @@ en este punto estan vinculados pero NO sincronizados, pues para sincronizarlo ne
 `git push -u origin master` y se enviaran los archivos locales a el repositorio en la nube , despues de eso el remoto sera el mismo que el local, puedo seguir modificando los archivos locales y se sincronizaran cada vez que haga un push 
 
 
+sss
