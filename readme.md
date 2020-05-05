@@ -422,74 +422,67 @@ elimina la rama del repositorio remoto
 elimina la rama local
 
 
-<<<<<<< HEAD
 ###  `git branch --no--merge`
 para saber cual rama no hemos fusionado usamos el comando `git branch --no--merge` u listara solo las que estan con desarrollos independientes a la principal
 
 
 
 ### cuidado con los merge
-=======
-## `git branch --no--merge`
-para saber cual rama no hemos fusionado usamos el comando `git branch --no--merge` u listara solo las que estan con desarrollos independientes a la principal 
-
-
-
-## cuidado con los merge 
->>>>>>> dc22a8653f36ca9752d1cfcb29da1f9a98bdc091
 
 cuando hacemos un merge de una rama a la que se le borro alguna caracteristica NO MOSTRARA mensaje de conflictos porque git no detecta conflictos con lineas que no existen, esto se produciria como un cambio natural
 
 
-<<<<<<< HEAD
-esto esta escrito desde atom con el uso de ubuntu terminal 
-=======
 # trabajo con sourcetree
 
-es un GUI git user interface 
+es un GUI git user interface
 
-en la ventana izquierda en workspace me muestra el git status  , automaticamente detectara los cambios y mostra la diferencia 
-graficamente muestra si estan en stagin o no y puedo hacer el commit desde la misma pestaña 
+en la ventana izquierda en workspace me muestra el git status  , automaticamente detectara los cambios y mostra la diferencia
+graficamente muestra si estan en stagin o no y puedo hacer el commit desde la misma pestaña
 
-la pestaña de history es el equivalente del git log de la terminal 
+la pestaña de history es el equivalente del git log de la terminal
 
-cuando hacemos commit empieza un contador en el boton de push indicando cuantos commit no estan en remoto 
+cuando hacemos commit empieza un contador en el boton de push indicando cuantos commit no estan en remoto
 
-al hacer el push con el boton me muestra las ramas que tengo configuradas hacia las cuales puedo hacer el push 
+al hacer el push con el boton me muestra las ramas que tengo configuradas hacia las cuales puedo hacer el push
 
-navegando por el historial de sourcetre no se cambia el estado de los archivos 
+navegando por el historial de sourcetre no se cambia el estado de los archivos
 
-se muestran los diferentes archivos mmodificados y sus diferencias 
+se muestran los diferentes archivos mmodificados y sus diferencias
 
-para saltar  de rama en source en branches doy click derecho y checkout rama 
+para saltar  de rama en source en branches doy click derecho y checkout rama
 
-si cambio de rama desde terminal en sourcetree tambien cambiara y reconocera tambien los cambios de los archivos 
+si cambio de rama desde terminal en sourcetree tambien cambiara y reconocera tambien los cambios de los archivos
 
- Cuidado si cambio de rama en source, la terminal no mostrara el cambio de rama solo hasta que haga el commit debo volver a cambiar de rama para hacer commit en la rama que desee 
+ Cuidado si cambio de rama en source, la terminal no mostrara el cambio de rama solo hasta que haga el commit debo volver a cambiar de rama para hacer commit en la rama que desee
 
- cambio con origin master 
- 
-debo tener cuidado porque cuando cambio de rama en source no lo hace en terminal y al hacer el push lo manda a la rama en la que estoy en source debo verificar antes la rama con git branch 
+ cambio con origin master
 
-tengo problema con la rama testing en source cuando hago el commit y el push no aparecen en el historial source, tengo que dar clic al la rama en historia u saltar entre ramas  para que se actualize 
+debo tener cuidado porque cuando cambio de rama en source no lo hace en terminal y al hacer el push lo manda a la rama en la que estoy en source debo verificar antes la rama con git branch
 
-si no hago los commits  desde la terminal sourcetree los va reconociendo simultaneamente 
+tengo problema con la rama testing en source cuando hago el commit y el push no aparecen en el historial source, tengo que dar clic al la rama en historia u saltar entre ramas  para que se actualize
 
-### abrir proyecto y cambiar nombre 
+si no hago los commits  desde la terminal sourcetree los va reconociendo simultaneamente
+
+### abrir proyecto y cambiar nombre
 
  en la primera pestaña donde se muestra la lista de repositorios para abrirlos observo en que rama estoy ubicado en cada repositorio y puedo cambiar el nombre del Rep que se muestra en source (el local NO cambia)
-si doy click en el listado se abrira el proyecto 
+si doy click en el listado se abrira el proyecto
 
-### la pestaña REMOTES 
+### la pestaña REMOTES
 Nos mostrara los repositorios a los cuales estemos vinculados remotamente y en cada uno de ellos la ramas  
 
-con el boton de terminal abrimos la terminal si tenemos git bash 
+con el boton de terminal abrimos la terminal si tenemos git bash
 
-# usar varios usuario con el uso de terminal de ubuntu 
-   
+# usar varios usuario con el uso de terminal de ubuntu
+
    puedo usar otra terminal de ubuntu con otro repositorio local y conffigurar el nombre de usuario y la contraseña de github y a la vez tener la terminal de github
-   
 
 
 
->>>>>>> dc22a8653f36ca9752d1cfcb29da1f9a98bdc091
+
+
+
+
+
+
+voy a hacer un cambio para mandarlo por sourcetree
