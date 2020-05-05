@@ -87,7 +87,7 @@ el git restore  saca la modificación o el archivo  nuevo del area de detección
 si ya lo agregue al area de preparación con <git add .> puedo sacarlo con {`git restore --staged`} y tambien funciona `{git reset HEAD |archivo|}`
 
 el git checkout quita los cambios que tenga el archivo en seguimiento pero si ya estan en la zona de preparación no los quita, se tendria que hacer un git `{restore --staged}` y despues el checkout
-porque es como saltar a otra rama sin haber guardado, pero esta en commits 
+porque es como saltar a otra rama sin haber guardado, pero esta en commits
 
 ## sincronizar un repositorio con github desde consola
 
@@ -203,7 +203,7 @@ primero verificamos en que rama estamos ubicados con el HEAD `git status` o con 
 
 no necesariamente tenemos que fusionar la rama con la mas cercana podemos hacerlo con cualquier otra
 
-### git merge 
+### git merge
 
 primero tenemos que ubicarnos en la RAMA DESTINO y ejecutamos el comando git merge <rama a fusionar>
 
@@ -237,7 +237,7 @@ el comando `git branch --merge` me muestra las ramas que esta fusionadas con la 
 si quiero ver los cambios que tiene otra rama con respecto a la actual utilizo el comando `git show otraRama` me mostrara un equivalente al `git diff` pero este aplicado a ramas
 
 ### git branch --no-merged
-el comando me muestra en terminal la ramas que no estan fusionadas 
+el comando me muestra en terminal la ramas que no estan fusionadas
 
 
 #### volver a un rama eliminada
@@ -281,20 +281,20 @@ luego puedo trabajar en el proyecto en linea en la web de github o puedo traer e
 esto crea un directorio de trabajo con el repositorio iniciado
 se clona el estado actual de ese repositorio en su rama principal  y su historia.  NO traemos las otras ramas que tenga esa otra persona
 
-verificamos que estemos vinculados al repositorio con 
+verificamos que estemos vinculados al repositorio con
 `git config --local --list` el remote.origin.url=dirección-del-repo
 el usuario y correo con `git config --global --list`
 el user.name y user.email=correoCuentaGithub
 desde este punto podemos modificar los archivos como veniamos trabajando haciendo adds y commits podemos crear ramas ya el repo es nuestro
 
 
-al crear otra rama y hacer commits usamos <git push origin rama> y en el repositorio de github se creara la rama donde estamos trabajando y se subira con los cambios del ultimo comit,  estaran sincronizadas tanto en local como remoto...... de ocurrir un erro lo mas probable es que el usuario de github no sea el que tengamos comfigurado en el repositorio local 
+al crear otra rama y hacer commits usamos <git push origin rama> y en el repositorio de github se creara la rama donde estamos trabajando y se subira con los cambios del ultimo comit,  estaran sincronizadas tanto en local como remoto...... de ocurrir un erro lo mas probable es que el usuario de github no sea el que tengamos comfigurado en el repositorio local
 
 
 de nuevo para crear un repositorio en github a partir de un directorio de trabajo local en github usamos la opción nuevoRepositorio y generamos la <url del repositorio de github>
 
 
-cambio prueba 
+cambio prueba
 
 luego en consola ubicados en el directorio del repositorio local viculamos al remoto
 {git remote add origin <url del repositorio de github> }
@@ -303,133 +303,133 @@ en este punto estan vinculados pero NO sincronizados, pues para sincronizarlo ne
 `git push -u origin master` y se enviaran los archivos locales a el repositorio en la nube , despues de eso el remoto sera el mismo que el local, puedo seguir modificando los archivos locales y se sincronizaran cada vez que haga un push
 
 
-## realizar aportes 
+## realizar aportes
 para aportar debo hacer un fork del proyecto original, clonarlo localmente y crear una rama para trabajar en ella.
-al hacer un push de nuevo `git push origin ramaNueva` 
+al hacer un push de nuevo `git push origin ramaNueva`
 
-luego de esto verifico el user.name y user.email si no lo tengo configurado me saltara una ventana de confirmacion para la contraseña de github, la ingreso y ya estara vinculada y podre hacer el <git push origin ramaNueva> y los cambios que relice estan en esa rama del repositorio remoto 
+luego de esto verifico el user.name y user.email si no lo tengo configurado me saltara una ventana de confirmacion para la contraseña de github, la ingreso y ya estara vinculada y podre hacer el <git push origin ramaNueva> y los cambios que relice estan en esa rama del repositorio remoto
 
 cuando hago este push puede que me salte el error de que no tengo acceso desde el usuario actual ,
-verifico el user.name y el user.email sean la misma cuenta del repositorio que estoy usando en github con 
-git config --global -l 
-git config --local -l 
-y los cambio con 
-git config user.name "usuario" --global 
-git config user.email "mail" --global 
+verifico el user.name y el user.email sean la misma cuenta del repositorio que estoy usando en github con
+git config --global -l
+git config --local -l
+y los cambio con
+git config user.name "usuario" --global
+git config user.email "mail" --global
 
-si esto no funciona puedo configurar dos usuarios eliminando las credenciales y configurando los usuarios por repositorios 
+si esto no funciona puedo configurar dos usuarios eliminando las credenciales y configurando los usuarios por repositorios
 
-para realizar el aporte en github me situo en la rama que desarrolle y hago un pull request hacia la rama del editor original 
+para realizar el aporte en github me situo en la rama que desarrolle y hago un pull request hacia la rama del editor original
 
-## Configurar usuarios en windows 
+## Configurar usuarios en windows
 
- hay que eliminar las credenciales en <panel de control \ todos los elementos del panel de control \ administrador de credenciales > elijo las credenciales de windows y busco las de las cuentas relacionadas con git y las quito 
+ hay que eliminar las credenciales en <panel de control \ todos los elementos del panel de control \ administrador de credenciales > elijo las credenciales de windows y busco las de las cuentas relacionadas con git y las quito
 
-luego en cada repositorio cambio la configuración local con el comando `git config --local --edit 
+luego en cada repositorio cambio la configuración local con el comando `git config --local --edit
 
-elimino la etiqueta de [user] con sus valores y coloco la siguiente: 
+elimino la etiqueta de [user] con sus valores y coloco la siguiente:
 
 [credential]
- interactive = always 
- 
+ interactive = always
+
 esto hara que cada vez que enviemos un push pida el usuario y la contraseña,  porque no dejara guardar en cache la credencial de github  
 
 esto hara que cada vez que enviemos un push pida el usuario y la contraseña,  porque no dejara guardar en cache la credencial de github
 
 ahora puedo hacer push desde repositorios distintos con diferentes usuarios
 
-= para trabajar desde una maquina con un solo usuario puedo eliminar la anterior configuración 
+= para trabajar desde una maquina con un solo usuario puedo eliminar la anterior configuración
 
-### pull request 
-luego de crear una rama en un repositorio clonado y realizar los cambios a los archivos puedo aportarlos a otra persona con un pull request desde la rama actual a la rama de la persona a la cual vamos a colaborar 
-luego tendremos que esperar a que la persona nos acepte o rechace el pull request 
+### pull request
+luego de crear una rama en un repositorio clonado y realizar los cambios a los archivos puedo aportarlos a otra persona con un pull request desde la rama actual a la rama de la persona a la cual vamos a colaborar
+luego tendremos que esperar a que la persona nos acepte o rechace el pull request
 
 en github la interfaz muestra los botones para el pull request y la elección de las ramas  
 
-despues de realizar el pull request llega un mensaje a el correo de editor original con el enlace de pull para ver las diferencias aguegadas 
-el programador original puede aceptar el pull y hacer merge de los cambios 
+despues de realizar el pull request llega un mensaje a el correo de editor original con el enlace de pull para ver las diferencias aguegadas
+el programador original puede aceptar el pull y hacer merge de los cambios
 en el historial de commits se veran los commits de las personas que colaboraron.   
-cuando el editor original acepta los cambios llega un correo al editor colaborador 
-se debe activar la opcion watching en github para que lleguen los correos 
+cuando el editor original acepta los cambios llega un correo al editor colaborador
+se debe activar la opcion watching en github para que lleguen los correos
 
 
-# pasos para los aportes 
-1. Hacer un fork de algun repositorio 
+# pasos para los aportes
+1. Hacer un fork de algun repositorio
 2. clonar el repositorio desde la url de mi cuenta de github
-3. Crear una segunda rama local 
+3. Crear una segunda rama local
 4. Empezar el desarrollo y hacer los cambios al proyecto
-5. Hacer commits de los cambios locales 
+5. Hacer commits de los cambios locales
 6. hacer un `git push origin ramaDesarrollo` (enviar los commit locales a la nube)
-7. crear un pull request hacia la rama a colaborar de editor original 
+7. crear un pull request hacia la rama a colaborar de editor original
 8. esperar a que el dueño de la otra cuenta nos acepte el cambio
 
-## sincronización cuando hice merge de un pull request  en remoto como editor original 
- al aceptar el merge del pull request estoy aceptando los cambios en el tiempo que hizo el colaborador y por lo tanto El HEAD de mi rama esta por detras de todos esos cambios, y por ende si hago un cambio en mi directorio local y quiero enviarlo con push me notificara el error , porque estoy mandando un cambio a una rama que no esta sincronizada, para resolverlo debo hacer un `git fetch para traer los cambios remotos del colaborador que estan en mi rama a una rama escondida en mi directorio local  y luego hacer un git merge desde la rama que estoy, de la que quiero adjuntar, o puedo hacer un git pull que es los dos pasos el fetch y el merge en uno solo 
+## sincronización cuando hice merge de un pull request  en remoto como editor original
+ al aceptar el merge del pull request estoy aceptando los cambios en el tiempo que hizo el colaborador y por lo tanto El HEAD de mi rama esta por detras de todos esos cambios, y por ende si hago un cambio en mi directorio local y quiero enviarlo con push me notificara el error , porque estoy mandando un cambio a una rama que no esta sincronizada, para resolverlo debo hacer un `git fetch para traer los cambios remotos del colaborador que estan en mi rama a una rama escondida en mi directorio local  y luego hacer un git merge desde la rama que estoy, de la que quiero adjuntar, o puedo hacer un git pull que es los dos pasos el fetch y el merge en uno solo
 
 ## sincronización cuando hice merge de un pull request  
 despues de hacer un merge de una rama en el repositorio remoto de un pull request, esa rama adquiere los commits del coloborador,  esos cambios no estan en el directorio local y ademas estan por delante del commit del HEAD local que era el que estaba sincronizado con el remoto.
 para sincronizarlos de nuevo debo traer esos cambios del remoto al local para poder seguir desarrollando,
 porque si no git no me dejara hacer push hacia la rama remota, para eso se usa un git fetch
 
-##  git fetch 
-Este comando traera los cambios de la rama en remoto y creara una rama escondida con los commits para que podamos verla y verificar cuales son los cambios antes de adjuntarla con un`git merge` a la rama en la que estamos trabajando, hacemos el merge y ya estamos sincronizados otravez con el remoto y podemos hacer push 
+##  git fetch
+Este comando traera los cambios de la rama en remoto y creara una rama escondida con los commits para que podamos verla y verificar cuales son los cambios antes de adjuntarla con un`git merge` a la rama en la que estamos trabajando, hacemos el merge y ya estamos sincronizados otravez con el remoto y podemos hacer push
 de nuestros cambios y el HEAD volvera a la punta de los commits .
-podemos hacerlo tambien con el `git pull` 
+podemos hacerlo tambien con el `git pull`
 
-## git pull 
-este comando es la union del git fetch y el git merge del paso enterior 
+## git pull
+este comando es la union del git fetch y el git merge del paso enterior
 
-## volver a sincronizar la rama del fork cuando el editor original hizo mas commits 
+## volver a sincronizar la rama del fork cuando el editor original hizo mas commits
 
-obtener los cambios que se han echo en el repositorio original si nuestra rama no las tiene? 
+obtener los cambios que se han echo en el repositorio original si nuestra rama no las tiene?
 
 debemos vincular el repositorio original  
-localmente podemos tener sincronizado el repositorio ajeno para hacer fetch y pull y ademas si somos parte de un equipo de trabajo se nos puede habilitar la opción de push 
+localmente podemos tener sincronizado el repositorio ajeno para hacer fetch y pull y ademas si somos parte de un equipo de trabajo se nos puede habilitar la opción de push
 
 con `git remote` vemos el repositorio propio vinculado
 
 `git remote -v` igual a `git remote --verbose`
-me muestra la url del repositorio propio al cual estoy vinculado remotamente 
+me muestra la url del repositorio propio al cual estoy vinculado remotamente
 
-podemos agregar otra ruta de un repositorio remoto 
-con `git remote add <nombreparafetch> urlDelRepooriginal` el nombre sera el equivalente a origin al cual se manda el push, es como identificamos ese repositorio 
+podemos agregar otra ruta de un repositorio remoto
+con `git remote add <nombreparafetch> urlDelRepooriginal` el nombre sera el equivalente a origin al cual se manda el push, es como identificamos ese repositorio
 
 verificamos con git remote -v y deberia aparecer el repositorio original con el nombre que le dimos y url ajena  y el de nosotros con nombre origin
 
 luego jalamos los cambios del repositorio original al nuestro con un `git fetch nombreRepo master`
-y luego hacer merge de la rama oculta que trae el fetch 
+y luego hacer merge de la rama oculta que trae el fetch
 
 tambien puedo hacer un `git pull nombreRepo master`
 
-con eso nuestra rama ya tendra los ultimos cambios de la original 
+con eso nuestra rama ya tendra los ultimos cambios de la original
 
 
 
 
-##### Notas para adjuntar 
+##### Notas para adjuntar
 cuando sincronizo un directorio local con uno el la nube solo se suben las ramas a las que les haga un `git push origin NomRama`
- 
-en el protocolo https github va a pedir el usuario y la contraseña siempre 
 
-### borrar una rama remota sincronicamente desde local 
+en el protocolo https github va a pedir el usuario y la contraseña siempre
+
+### borrar una rama remota sincronicamente desde local
 
 cuando voy a borrar una rama de repositorio remoto tengo que borrarla primero el local, si esta no esta fusionada me salta un error para que la fusionemos, podemos fusionarla a la rama de desarrollo pero si no queremos hacerlo aun se puede  crear otra rama separada y hacer un merge desde esa, luego puedo borrarla  hacer un `git branch -d rama` hay estara borrada localmente para hacerlo remoto uso `git push origin --delete rama`
 
 ### `git push origin --delete rama`
-elimina la rama del repositorio remoto 
+elimina la rama del repositorio remoto
 
 ### `git branch -d rama`
-elimina la rama local 
+elimina la rama local
 
 
 ###  `git branch --no--merge`
-para saber cual rama no hemos fusionado usamos el comando `git branch --no--merge` u listara solo las que estan con desarrollos independientes a la principal 
+para saber cual rama no hemos fusionado usamos el comando `git branch --no--merge` u listara solo las que estan con desarrollos independientes a la principal
 
 
 
-### cuidado con los merge 
+### cuidado con los merge
 
-cuando hacemos un merge de una rama a la que se le borro alguna caracteristica NO MOSTRARA mensaje de conflictos porque git no detecta conflictos con lineas que no existen, esto se produciria como un cambio natural 
+cuando hacemos un merge de una rama a la que se le borro alguna caracteristica NO MOSTRARA mensaje de conflictos porque git no detecta conflictos con lineas que no existen, esto se produciria como un cambio natural
 
 
-
+esto esta escrito desde atom con el uso de ubuntu terminal 
